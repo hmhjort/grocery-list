@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="container">
+            <div class="row">
+                <div class="col-20 text-center">
+                    <h1>Recipes Info</h1>
+                </div>
+            </div>
+        </div>
+        <body>
+            <h2>{{info.title}}</h2>
+            <img src="{{info.image}}">
+            <p>Number of servings: {{info.servings}}</p>
+            <p>Time to make: {{info.prepare}}</p>
+            <a href={{info.source}}>Recipe Source</a>
+            <p>Ingredients:</p>
+            <ul class="list-group">
+            {% for use in usable.ingredients %}
+                <li class="list-group-item">{{use}}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </body>
+    {% endblock %}
+</html>
